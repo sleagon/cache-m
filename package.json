@@ -1,10 +1,10 @@
 {
-  "name": "cache-memory",
+  "name": "cache-m",
   "author": {
     "name": "sleagon",
     "email": "shanyy163@163.com"
   },
-  "version": "0.2.1",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/sleagon/cache-suite.git"
