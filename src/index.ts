@@ -1,7 +1,7 @@
 'use strict';
 
 import { Context, Handler } from 'cache-suite';
-import LRU from 'lru-cache';
+import * as LRU from 'lru-cache';
 
 export default class MemoryCache<T> implements Handler<T> {
   private lru: LRU.Cache<string, T>;
@@ -10,7 +10,7 @@ export default class MemoryCache<T> implements Handler<T> {
     return this.name;
   }
   constructor(size: number = 500, name: string = 'MEM-CACHE') {
-    this.lru = LRU<string, T>(size);
+    this.lru = new LRU<string, T>(size);
     this.name = name;
   }
   public async get(ctx: Context<T>, next?: () => Promise<void>): Promise<void> {
